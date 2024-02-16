@@ -1,1 +1,1 @@
-const kPrimaryDuration = Duration(seconds: 3);
+const kPrimaryDuration = Duration(seconds: 2);

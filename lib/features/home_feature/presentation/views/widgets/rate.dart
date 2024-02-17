@@ -10,34 +10,25 @@ class Rate extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Row(
-      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+      mainAxisAlignment: MainAxisAlignment.center,
       children: [
-        Text(
-          '13.99€',
-          style: Styles.textStyle25.copyWith(
-              fontWeight: FontWeight.bold, fontSize: 30),
+        const Icon(
+          FontAwesomeIcons.solidStar,
+          color: Colors.amber,
+          size: 20,
         ),
-        Row(
-          children: [
-            const Icon(
-              FontAwesomeIcons.solidStar,
-              color: Colors.amber,
-              size: 20,
-            ),
-            const SizedBox(
-              width: 5,
-            ),
-            Text(
-              '4.8',
-              style: Styles.textStyle25
-                  .copyWith(fontWeight: FontWeight.bold),
-            ),
-            const SizedBox(width: 5,),
-            Text(
-              '(425)',
-              style: Styles.textStyle16.copyWith(fontSize: 20),
-            ),
-          ],
+        const SizedBox(
+          width: 5,
+        ),
+        Text(
+          '4.8',
+          style: Styles.textStyle25
+              .copyWith(fontWeight: FontWeight.bold),
+        ),
+        const SizedBox(width: 5,),
+        Text(
+          '(425)',
+          style: Styles.textStyle16.copyWith(fontSize: 20),
         ),
       ],
     );

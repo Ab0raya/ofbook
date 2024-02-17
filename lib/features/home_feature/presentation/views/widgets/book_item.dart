@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 
 import '../../../../../core/utils/assets.dart';
-class ListItem extends StatelessWidget {
-  const ListItem({super.key, required this.w, required this.h});
+class BookItem extends StatelessWidget {
+  const BookItem({super.key, required this.w, required this.h});
   final double w;
   final double h;
 

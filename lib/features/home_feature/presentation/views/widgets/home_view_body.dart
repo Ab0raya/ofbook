@@ -43,7 +43,8 @@ class BestSellerList extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Expanded(
-      child: ListView.builder(itemBuilder: (context,index){
+      child: ListView.builder(
+          itemBuilder: (context,index){
         return const BestSellerItem();
       }),
     );

@@ -6,8 +6,8 @@ import '../../../../../constants/media_query.dart';
 import '../../../../../core/utils/styles.dart';
 import 'package:go_router/go_router.dart';
 
-class BestSellerItem extends StatelessWidget {
-  const BestSellerItem({
+class NewestItem extends StatelessWidget {
+  const NewestItem({
     super.key,
   });
 

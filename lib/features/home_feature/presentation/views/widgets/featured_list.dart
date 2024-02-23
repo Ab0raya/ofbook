@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:ofbook/constants/media_query.dart';
 import 'package:ofbook/features/home_feature/presentation/views/widgets/book_item.dart';
-class HorizontalList extends StatelessWidget {
-  const HorizontalList({super.key});
+class FeaturedList extends StatelessWidget {
+  const FeaturedList({super.key});
 
   @override
   Widget build(BuildContext context) {

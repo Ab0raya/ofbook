@@ -21,7 +21,7 @@ class Ofbook extends StatelessWidget {
     return MultiBlocProvider(
       providers: [
         BlocProvider(create: (context)=>FeaturedListCubit(getIt.get<HomeRepoImpl>(),)..fetchFeaturedBooks(),),
-        BlocProvider(create: (context)=>NewestListCubit(getIt.get<HomeRepoImpl>(),),),
+        BlocProvider(create: (context)=>NewestListCubit(getIt.get<HomeRepoImpl>(),)..fetchNewestBooks(),),
       ],
       child: MaterialApp.router(
         routerConfig: AppRouter.router,

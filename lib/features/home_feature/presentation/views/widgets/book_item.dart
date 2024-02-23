@@ -1,3 +1,4 @@
+import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 
 class BookItem extends StatelessWidget {
@@ -11,11 +12,13 @@ class BookItem extends StatelessWidget {
       margin: const EdgeInsets.symmetric(horizontal: 10),
       width: w,
       height: h,
-      decoration: BoxDecoration(
+      child: ClipRRect(
         borderRadius: BorderRadius.circular(16),
-        image:  DecorationImage(
-          fit: BoxFit.fill,
-          image: NetworkImage(imageUrl),
+        child: CachedNetworkImage(
+          fit: BoxFit.cover,
+          imageUrl: imageUrl,
+          placeholder: (context, ima) => const Center(child: CircularProgressIndicator()),
+          errorWidget: (context, url, error) => const Icon(Icons.error),
         ),
       ),
     );

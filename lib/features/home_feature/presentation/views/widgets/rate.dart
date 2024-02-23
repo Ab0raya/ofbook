@@ -3,8 +3,10 @@ import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import '../../../../../core/utils/styles.dart';
 
 class Rate extends StatelessWidget {
+  final String rate;
+  final String rateTimes;
   const Rate({
-    super.key,
+    super.key, required this.rate, required this.rateTimes,
   });
 
   @override
@@ -21,13 +23,13 @@ class Rate extends StatelessWidget {
           width: 5,
         ),
         Text(
-          '4.8',
+         rate,
           style: Styles.textStyle25
               .copyWith(fontWeight: FontWeight.bold),
         ),
         const SizedBox(width: 5,),
         Text(
-          '(425)',
+          '($rateTimes)',
           style: Styles.textStyle16.copyWith(fontSize: 20),
         ),
       ],

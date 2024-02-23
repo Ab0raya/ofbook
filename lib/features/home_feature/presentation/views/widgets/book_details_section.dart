@@ -19,7 +19,7 @@ class BookDetailsSection extends StatelessWidget {
         Text("The pencil",style: Styles.textStyle20.copyWith(fontSize: 50),),
         const Text("Olivia Watson",style: Styles.normalTextStyle20,),
         const SizedBox(height: 15,) ,
-        const Rate(),
+        const Rate(rate: '99', rateTimes: '99',),
         const SizedBox(height: 40,) ,
         const PreviewAndPriceItem(),
       ],

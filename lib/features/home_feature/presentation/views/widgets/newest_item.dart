@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:ofbook/core/utils/app_router.dart';
+import 'package:ofbook/features/home_feature/data/models/book_model/book_model.dart';
 import 'package:ofbook/features/home_feature/presentation/views/widgets/book_item.dart';
 import 'package:ofbook/features/home_feature/presentation/views/widgets/rate.dart';
 import '../../../../../constants/media_query.dart';
@@ -8,9 +9,9 @@ import 'package:go_router/go_router.dart';
 
 class NewestItem extends StatelessWidget {
   const NewestItem({
-    super.key,
+    super.key, required this.book,
   });
-
+  final BookModel book;
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
@@ -23,10 +24,10 @@ class NewestItem extends StatelessWidget {
           children: [
             BookItem(
               w: getScreenWidth(context) * 0.28,
-              h: getScreenHeight(context) * 0.18, imageUrl: 'https://www.designforwriters.com/wp-content/uploads/2017/10/design-for-writers-book-cover-tf-2-a-million-to-one.jpg',
+              h: getScreenHeight(context) * 0.18, imageUrl: book.volumeInfo.imageLinks?.thumbnail??"",
             ),
             const SizedBox(
-              width: 30,
+              width: 10,
             ),
             Expanded(
               child: Column(
@@ -34,8 +35,8 @@ class NewestItem extends StatelessWidget {
                 children: [
                   SizedBox(
                     width: getScreenWidth(context) * 0.5,
-                    child: const Text(
-                      'Harry potter and the goblet of fire',
+                    child: Text(
+                      '${book.volumeInfo.title}',
                       style: Styles.textStyle20,
                       overflow: TextOverflow.ellipsis,
                       maxLines: 2,
@@ -44,8 +45,8 @@ class NewestItem extends StatelessWidget {
                   const SizedBox(
                     height: 10,
                   ),
-                  const Text(
-                    'M.Aburaya',
+                  Text(
+                   book.volumeInfo.authors![0],
                     style: Styles.textStyle16,
                   ),
                   const SizedBox(
@@ -55,11 +56,11 @@ class NewestItem extends StatelessWidget {
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
                       Text(
-                        '13.99€',
+                        'Free',
                         style: Styles.textStyle25.copyWith(
                             fontWeight: FontWeight.bold, fontSize: 30),
                       ),
-                      const Rate(),
+                      Rate(rate: (book.volumeInfo.averageRating??0).toString(),rateTimes: (book.volumeInfo.ratingsCount??0).toString()),
                     ],
                   )
                 ],

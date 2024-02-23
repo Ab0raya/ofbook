@@ -23,7 +23,7 @@ class NewestItem extends StatelessWidget {
           children: [
             BookItem(
               w: getScreenWidth(context) * 0.28,
-              h: getScreenHeight(context) * 0.18,
+              h: getScreenHeight(context) * 0.18, imageUrl: 'https://www.designforwriters.com/wp-content/uploads/2017/10/design-for-writers-book-cover-tf-2-a-million-to-one.jpg',
             ),
             const SizedBox(
               width: 30,

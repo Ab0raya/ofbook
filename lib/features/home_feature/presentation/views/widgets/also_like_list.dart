@@ -14,7 +14,7 @@ class AlsoLikeList extends StatelessWidget {
       child: ListView.builder(
           scrollDirection: Axis.horizontal,
           itemBuilder: (context,index){
-            return BookItem(w: getScreenWidth(context)*0.23, h: getScreenHeight(context)*0.17);
+            return BookItem(w: getScreenWidth(context)*0.23, h: getScreenHeight(context)*0.17, imageUrl: 'https://www.designforwriters.com/wp-content/uploads/2017/10/design-for-writers-book-cover-tf-2-a-million-to-one.jpg',);
           }),
     );
   }
